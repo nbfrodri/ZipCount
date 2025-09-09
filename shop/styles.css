@@ -1,0 +1,975 @@
+/* =============================================
+   ESTILOS BASE
+   ============================================= */
+
+   body {
+    background-color: rgb(210, 58, 68);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =============================================
+   COMPONENTE NAVBAR (Barra de navegación principal)
+   ============================================= */
+
+#navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Logo */
+#logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+#logo {
+    width: auto;
+    height: 63px;
+    min-width: 100px;
+    object-fit: contain;
+}
+
+/* Contenedor del menú */
+#menu-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+/* =============================================
+   ELEMENTOS DEL MENÚ DESKTOP
+   ============================================= */
+
+#desktop-menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+}
+
+/* Barra de búsqueda desktop */
+#searchbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#textbox {
+    margin: 10px;
+    margin-left: 15px;
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    background-color: rgba(222, 222, 222, 0.7);
+    border: none;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#textbox:focus {
+    outline: none;
+}
+
+/* =============================================
+   ICONOS SVG (BOTONES RESPONSIVOS)
+   ============================================= */
+
+/* Estilos base para los botones SVG */
+.svg-menu {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    background-color: rgba(227, 6, 19, 1);
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.svg {
+    color: white;
+    width: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.svg-menu:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Contenedor de iconos */
+#svg-div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Usamos fracciones para mejor responsividad */
+    gap: 10px;
+    height: 100%;
+    padding: 0 10px;
+}
+
+/* Botón About Us */
+#abt-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 20px;
+}
+
+#aboutus-button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 100px;
+    min-width: 100px;
+    color: white;
+    white-space: nowrap;
+}
+
+#aboutus-button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* =============================================
+   MENÚ DE USUARIO (DESKTOP)
+   ============================================= */
+
+.user-menu-container {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* =============================================
+   MENÚ DE CONTACTO (DESKTOP)
+   ============================================= */
+
+   .contact-menu-container {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.contact-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    padding: 12px 16px;
+}
+
+.contact-dropdown.show {
+    display: block;
+}
+
+.contact-dropdown-item {
+    color: black;
+    padding: 8px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.contact-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.contact-dropdown-item svg {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    color: #e30613;
+}
+
+/* =============================================
+   MENÚ MÓVIL Y COMPONENTES
+   ============================================= */
+
+/* Botón hamburguesa */
+#hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#hamburger-menu svg {
+    width: 30px;
+    height: 30px;
+    stroke: #000;
+}
+
+/* Overlay del menú móvil */
+#mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(210, 58, 68, 0.95);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#close-mobile-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.mobile-menu-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.mobile-menu-item span {
+    margin-left: 15px;
+}
+
+.mobile-svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+}
+
+/* Barra de búsqueda móvil */
+#mobile-search {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#mobile-textbox {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(222, 222, 222, 0.7);
+    border: none;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+}
+
+#mobile-textbox:focus {
+    outline: none;
+}
+
+/* =============================================
+   DROPDOWNS EN MENÚ MÓVIL
+   ============================================= */
+
+.mobile-menu-dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.mobile-dropdown-content {
+    display: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.mobile-dropdown-content.show {
+    display: block;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mobile-contact-item:last-child { /* Último elemento sin borde inferior */
+    border-bottom: none;
+}
+
+.mobile-contact-item svg {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+.mobile-dropdown-item {
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.mobile-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-dropdown-item:hover {
+    background-color: rgba(227, 6, 19, 0.3);
+}
+
+/* =============================================
+   Shop (Tienda)
+   ============================================= */
+
+#carrito-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    height: 800px;
+}
+
+#title-container {
+    display: flex;
+    justify-content: left;
+    margin: 20px 0;
+}
+
+#main-title {
+    font-size: 40px;
+    color: #e30613;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: white;
+    padding: 10px 20px;
+    margin-left: 40px;
+    border-radius: 15px;
+}
+
+#carrito-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background-color: rgb(240, 240, 240);
+    padding: 10px 20px;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 40px;
+    height: 750px;
+    margin-bottom: 80px;
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+#carrito-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(189, 89, 89);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 150px;
+    position: relative;
+}
+
+.carrito-imagen {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.carrito-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.carrito-titulo {
+    font-size: 30.4px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 20px;
+}
+
+.carrito-boton {
+    background-color: #e30613; 
+    color: white; 
+    border: none;
+    padding: 10px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    transition: transform 0.3s ease; 
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+}
+
+.carrito-precio {
+    font-size: 19.2px;
+    color: white; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(60deg, #3ed762, rgb(33, 130, 54)); /* Gradiente verde */
+    padding: 10px 15px; 
+    border-radius: 20px; 
+    text-align: center; 
+    display: inline-block; /* permite que el tamaño se ajuste al contenido haciendo que se comporte como un bloque en línea */
+    cursor: pointer;
+    width: 100px; 
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+.carrito-precio:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+.carrito-boton:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
+
+.carrito-imagen:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+.scroll-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar: así no se ve */
+}
+
+#carrito-total {
+    font-size: 32px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 35%;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 30px;
+    right: 45px;
+}
+
+#texto-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#total-text {
+    font-size: 40px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    top: 6%;
+    left: 5%;
+}
+
+#total-precio {
+    font-size: 32px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    top: 9%;
+    right: 5%;
+}
+
+#pagar-button {
+    background: linear-gradient(60deg, #3ed762, rgb(33, 130, 54)); /* Gradiente verde */
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28.8px;
+    margin-top: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+    height: 70px;
+}
+
+#pagar-button:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+   
+   #footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 0 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-container {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    max-height: 60px;
+    width: auto;
+}
+
+.footer-description {
+    margin: 0 0 20px;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+.footer-title {
+    color: #e30613;
+    margin-bottom: 20px;
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #e30613;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-link {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+}
+
+.footer-link:hover {
+    color: #e30613;
+    transform: scale(1.05); 
+    padding-left: 5px;
+}
+
+.contact-info {
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.contact-item svg {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.contact-item:hover {
+    color: #e30613;
+    transform: scale(1.03);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    background-color: #e30613;
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 4px 8px rgba(227, 6, 19, 0.3);
+}
+
+.newsletter-text {
+    color: #aaa;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: inherit;
+}
+
+.newsletter-form input::placeholder {
+    color: #ccc;
+}
+
+.newsletter-form button {
+    padding: 12px 15px;
+    background-color: #e30613;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.newsletter-form button:hover {
+    background-color: #c00511; /* Un rojo más oscuro */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.copyright {
+    margin: 0 0 10px;
+    color: #aaa;
+    font-size: 14.4px;
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.legal-link {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13.6px;
+}
+
+.legal-link:hover {
+    color: #e30613;
+}
+
+.separator {
+    color: #555;
+}
+
+/* =============================================
+   MEDIA QUERIES (RESPONSIVO)
+   ============================================= */
+
+/* Estilos para móviles (hasta 768px) */
+@media only screen and (max-width: 768px) {
+    .mobile-menu-item {
+        padding: 12px 15px;
+    }
+    
+    .mobile-svg {
+        width: 20px;
+        height: 20px;
+    }
+    .no-padding {
+        padding: 0px;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+    
+    #hamburger-menu {
+        display: block;
+    }
+    
+    #logo {
+        height: 50px;
+    }
+    
+    #navbar .row {
+        padding: 5px 0;
+    }
+    
+    #menu-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    #main-title {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    #title-container {
+        justify-content: center;
+    }
+
+    #carrito-wrapper {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    #carrito-contenedor {
+        width: 90%;
+        margin: 20px auto;
+        height: 600px;
+    }
+
+    #carrito-total {
+        width: 90%;
+        position: relative;
+        left: 5%;
+    }
+
+    .carrito-titulo {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    .carrito-precio {
+        font-size: 16px;
+        width: 80px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .separator {
+        display: none;
+    }
+}
+
+/* Estilos para desktop (769px en adelante) */
+@media only screen and (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
+    
+    .desktop-only {
+        display: flex !important;
+    }
+    
+}

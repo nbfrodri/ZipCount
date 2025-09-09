@@ -1,0 +1,63 @@
+/* =============================================
+   DROPDOWNS EN MENÚ MÓVIL
+   ============================================= */
+
+.mobile-menu-dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.mobile-dropdown-content {
+    display: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.mobile-dropdown-content.show {
+    display: block;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mobile-contact-item:last-child { /* Último elemento sin borde inferior */
+    border-bottom: none;
+}
+
+.mobile-contact-item svg {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+.mobile-dropdown-item {
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mobile-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-dropdown-item:hover {
+    background-color: rgba(227, 6, 19, 0.3);
+}

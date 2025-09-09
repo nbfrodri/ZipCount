@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e03a79a3-2a75-4399-98ca-c89b2e422a2e/resourceGroups/zipcount_group/providers/Microsoft.Web/sites/zipcount",
+    "appService.deploySubpath": "."
+}
